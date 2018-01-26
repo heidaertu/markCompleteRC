@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mark Complete",
+  "description": "This extension allows the user to mark complete for every comments in the code review in fisheye",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "Test",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": ["icon.png", "incompleteIcon.jpg"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://fisheye.indeed.com/*"
+      ],
+      "js": [
+        "markComplete.js"
+      ]
+    }
+  ]
+}
